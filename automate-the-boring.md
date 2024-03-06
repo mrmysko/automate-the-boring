@@ -218,131 +218,165 @@ In the except clause goes whatever code you want to execute if an error is caugh
 
 <pre>
 <b>1. What is []?</b>
+
+Square brackets. An empty list.
 </pre>
 <pre>
 <b>2. How would you assign the value 'hello' as the third value in a list stored in a variable named spam?</b>
 (Assume spam contains [2, 4, 6, 8, 10].)
-For the following three questions, let’s say spam contains the list ['a', 'b', 'c', 'd'].
+
+list[2] = "hello" or list.insert(2, "hello")
 </pre>
+For the following three questions, let’s say spam contains the list ['a', 'b', 'c', 'd'].
 <pre>
 <b>3. What does spam[int(int('3' * 2) // 11)] evaluate to?</b>
+'d'
 </pre>
 <pre>
 <b>4. What does spam[-1] evaluate to?</b>
+'d'
 </pre>
 <pre>
 <b>5. What does spam[:2] evaluate to?</b>
-For the following three questions, let’s say bacon contains the list [3.14, 'cat', 11, 'cat', True].
+['a', 'b']
 </pre>
+For the following three questions, let’s say bacon contains the list [3.14, 'cat', 11, 'cat', True].
 <pre>
 <b>6. What does bacon.index('cat') evaluate to?</b>
+1
 </pre>
 <pre>
 <b>7. What does bacon.append(99) make the list value in bacon look like?</b>
+[3.14, 'cat', 11, 'cat', True, 99]
 </pre>
 <pre>
 <b>8. What does bacon.remove('cat') make the list value in bacon look like?</b>
+[3.14, 11, 'cat', True]
 </pre>
 <pre>
 <b>9. What are the operators for list concatenation and list replication?</b>
++ and *
 </pre>
 <pre>
 <b>10. What is the difference between the append() and insert() list methods?</b>
+.append puts an item at the end of the list. .insert puts the item at the provided index, shifting following items backwards.
 </pre>
 <pre>
 <b>11. What are two ways to remove values from a list?</b>
+.pop(), removes the last item if no index is provided. .remove(), removes the first occurence of whatever value is provided. (also del)
 </pre>
 <pre>
 <b>12. Name a few ways that list values are similar to string values.</b>
+Strings are just a list of chars. hello[0] is ju "h". U can use many list methods on strings.
 </pre>
 <pre>
 <b>13. What is the difference between lists and tuples?</b>
+Tuples are immutable, unchangeable.
 </pre>
 <pre>
 <b>14. How do you type the tuple value that has just the integer value 42 in it?</b>
+(42, )
 </pre>
 <pre>
 <b>15. How can you get the tuple form of a list value? How can you get the list form of a tuple value?</b>
+tuple("list"["value"]), list("tuple"["value"])
 </pre>
 <pre>
 <b>16. Variables that “contain” list values don’t actually contain lists directly. What do they contain instead?</b>
+References to memory that contain the values in the list.
 </pre>
 <pre>
 <b>17. What is the difference between copy.copy() and copy.deepcopy()?</b>
+.copy() creates an identical list at a new memory space. If that list contains another list it will wtill be a pointer to that memory. For that you can use .deepcopy() to create copies of nested lists.
 </pre>
 
 # Chapter 5 Questions
 
 <pre>
 <b>1. What does the code for an empty dictionary look like?</b>
+variable = dict(), or {}
 </pre>
 <pre>
 <b>2. What does a dictionary value with a key 'foo' and a value 42 look
 like?</b>
+dict{'foo': 42}
 </pre>
 <pre>
 <b>3. What is the main difference between a dictionary and a list?</b>
+Lists are ordered sequences, dictionaries are unordered and has no index.
 </pre>
 <pre>
 <b>4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?</b>
+You get a KeyError.
 </pre>
 <pre>
 <b>5. If a dictionary is stored in spam, what is the difference between the
 expressions 'cat' in spam and 'cat' in spam.keys()?</b>
+They are the same.
 </pre>
 <pre>
 <b>6. If a dictionary is stored in spam, what is the difference between the
 expressions 'cat' in spam and 'cat' in spam.values()?</b>
+The first looks for 'cat' in the top-level keys. The second looks for the 'cat' in the values of the top-level, but if the value happens to be a dictionary it looks for 'cat' in that dictionarys keys.
 </pre>
 <pre>
-<b>7. What is a shortcut for the following code?</b>
+<b>7. What is a shortcut for the following code?
 if 'color' not in spam:
-spam['color'] = 'black'
+spam['color'] = 'black'</b>
+spam.setdefault('color', 'black')
 </pre>
 <pre>
 <b>8. What module and function can be used to “pretty print” dictionary
 values?</b>
+pprint
 </pre>
 
 # Chapter 6 Questions
 
 <pre>
 <b>1. What are escape characters?</b>
+Sequences of characters that gets interpreted by python as something else than literal.
 </pre>
 <pre>
 <b>2. What do the \n and \t escape characters represent?</b>
+\n is a newline, \t is a tab char.
 </pre>
 <pre>
 <b>3. How can you put a \ backslash character in a string?</b>
+You escape it with a single backslash, so \\ prints as a '\'
 </pre>
 <pre>
 <b>4. The string value "Howl's Moving Castle" is a valid string. Why isn’t it a problem that the single quote
 character in the word Howl's isn’t escaped?</b>
+The string can use either double or single quotes to mark the start and end of a string. But they must be the same.
 </pre>
 <pre>
 <b>5. If you don’t want to put \n in your string, how can you write a string with newlines in it?</b>
+You can multi-line quote it with """ in the start and end.
 </pre>
 <pre>
 <b>6. What do the following expressions evaluate to?</b>
-'Hello, world!'[1]
-'Hello, world!'[0:5]
-'Hello, world!'[:5]
-'Hello, world!'[3:]
+'Hello, world!'[1]      - 'e'
+'Hello, world!'[0:5]    - 'Hello'
+'Hello, world!'[:5]     - 'Hello'
+'Hello, world!'[3:]     - 'lo, world!'
 </pre>
 <pre>
 <b>7. What do the following expressions evaluate to?</b>
-'Hello'.upper()
-'Hello'.upper().isupper()
-'Hello'.upper().lower()
+'Hello'.upper()             - 'HELLO'
+'Hello'.upper().isupper()   - True
+'Hello'.upper().lower()     - 'hello'
 </pre>
 <pre>
 <b>8. What do the following expressions evaluate to?</b>
-'Remember, remember, the fifth of November.'.split()
-'-'.join('There can be only one.'.split())
+'Remember, remember, the fifth of November.'.split() - ['Remember', 'remember,', 'the', 'fifth', 'of', 'November']
+'-'.join('There can be only one.'.split()) - 'There-can-only-be-one.'
 </pre>
 <pre>
 <b>9. What string methods can you use to right-justify, left-justify, and center a string?</b>
+.ljust() rjust() center()
 </pre>
 <pre>
 <b>10. How can you trim whitespace characters from the beginning or end of a string?</b>
+With the .strip() method. (or lstrip() rstrip())
 </pre>
